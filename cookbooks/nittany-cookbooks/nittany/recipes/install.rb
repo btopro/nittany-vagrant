@@ -10,6 +10,7 @@ when "debian", "ubuntu"
   bash "install-nittany-script" do
     code <<-EOH
     cd /var/www/nittany
+    chown -R vagrant:vagrant /var/www/nittany
     drush site-install nittany -y --db-url=mysql://root:n3I7z0HAYV689Z2541mF@localhost/nittany_dev --db-su=root --db-su-pw=n3I7z0HAYV689Z2541mF  --account-mail="admin@dev.nittany.local" --site-mail="admin@dev.nittany.local" --site-name="Nittany"
     #modify ownership of these directories
     chown -R www-data:www-data /var/www/nittany/sites/default/files
