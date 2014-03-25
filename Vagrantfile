@@ -16,8 +16,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # private network port maping, host files point to this domain
   config.vm.network "private_network", ip: "10.0.18.55"
 
-  config.vm.network "forwarded_port", guest: 80, host: 1855
-  config.vm.network "forwarded_port", guest: 3306, host: 3305
+  config.vm.network "forwarded_port", guest: 80, host: 80
+  config.vm.network "forwarded_port", guest: 3306, host: 3306
 
   # mount directory
   config.vm.synced_folder ".", "/vagrant"
@@ -44,7 +44,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       :mysql => {
         :server_root_password => "n3I7z0HAYV689Z2541mF",
         :allow_remote_root => true,
-        :bind_address => "0.0.18.55"
+        :bind_address => "0.0.0.0"
       },
       :hosts => {
         :localhost_aliases => ["dev"]
