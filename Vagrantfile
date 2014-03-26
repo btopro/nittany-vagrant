@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
   # private network port maping, host files point to this domain
-  config.vm.network "private_network", ip: "10.0.18.55"
+  config.vm.network "private_network", ip: "10.0.0.1"
 
   config.vm.network "forwarded_port", guest: 80, host: 80
   config.vm.network "forwarded_port", guest: 3306, host: 3306

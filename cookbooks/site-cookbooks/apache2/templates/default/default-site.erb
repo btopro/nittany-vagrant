@@ -1,12 +1,13 @@
+NameVirtualHost *:80
 <VirtualHost *:<%= node[:apache][:default_site_port] %>>
         ServerAdmin <%= node[:apache][:contact] %>
 
-        DocumentRoot /var/www/
+        DocumentRoot /var/www/nittany
         <Directory />
                 Options FollowSymLinks
                 AllowOverride None
         </Directory>
-        <Directory /var/www/>
+        <Directory /var/www/nittany>
                 Options Indexes FollowSymLinks MultiViews
                 AllowOverride None
                 Order allow,deny
@@ -24,7 +25,7 @@
                 Allow from all
         </Directory>
 
-        ErrorLog <%= node[:apache][:log_dir] %>/error.log 
+        ErrorLog <%= node[:apache][:log_dir] %>/error.log
 
         # Possible values include: debug, info, notice, warn, error, crit,
         # alert, emerg.

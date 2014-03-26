@@ -14,7 +14,7 @@ This is a Vagrant profile for installing a fully functioning [Nittany distributi
 ###Nittany development
 
 # front facing addresses
-10.0.18.55       dev.nittany.local
+10.0.0.1       dev.nittany.local
 ```
 
 ###Spin up the vagrant instance:
