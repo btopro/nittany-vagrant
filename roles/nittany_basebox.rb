@@ -4,6 +4,7 @@ run_list(
   "role[apache2_mod_php]",
   "role[drupal]",
   "role[drupal_dev]",
+  "recipe[nittany::performance]",
   "role[memcached]",
   "role[mysql_server]",
   "recipe[drupal::multisite]",
