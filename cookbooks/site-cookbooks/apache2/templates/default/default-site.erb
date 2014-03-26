@@ -1,4 +1,8 @@
-NameVirtualHost *:80
+ServerName dev.nittany.local
+<VirtualHost *:443>
+
+</VirtualHost>
+
 <VirtualHost *:<%= node[:apache][:default_site_port] %>>
         ServerAdmin <%= node[:apache][:contact] %>
 
