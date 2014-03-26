@@ -1,12 +1,12 @@
 <VirtualHost *:<%= node[:apache][:default_site_port] %>>
         ServerAdmin <%= node[:apache][:contact] %>
 
-        DocumentRoot /var/www/
+        DocumentRoot /var/www/nittany
         <Directory />
                 Options FollowSymLinks
                 AllowOverride None
         </Directory>
-        <Directory /var/www/>
+        <Directory /var/www/nittany>
                 Options Indexes FollowSymLinks MultiViews
                 AllowOverride None
                 Order allow,deny
@@ -14,6 +14,7 @@
                 # This directive allows us to have apache2's default start page
                 # in /apache2-default/, but still have / go to the right place
                 #RedirectMatch ^/$ /apache2-default/
+                Include /var/www/nittany/.htaccess
         </Directory>
 
         ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
@@ -24,7 +25,7 @@
                 Allow from all
         </Directory>
 
-        ErrorLog <%= node[:apache][:log_dir] %>/error.log 
+        ErrorLog <%= node[:apache][:log_dir] %>/error.log
 
         # Possible values include: debug, info, notice, warn, error, crit,
         # alert, emerg.
