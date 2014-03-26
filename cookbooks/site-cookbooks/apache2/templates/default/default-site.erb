@@ -1,17 +1,12 @@
-ServerName dev.nittany.local
-<VirtualHost *:443>
-
-</VirtualHost>
-
 <VirtualHost *:<%= node[:apache][:default_site_port] %>>
         ServerAdmin <%= node[:apache][:contact] %>
 
-        DocumentRoot /var/www/nittany
+        DocumentRoot /var/www/
         <Directory />
                 Options FollowSymLinks
                 AllowOverride None
         </Directory>
-        <Directory /var/www/nittany>
+        <Directory /var/www/>
                 Options Indexes FollowSymLinks MultiViews
                 AllowOverride None
                 Order allow,deny
@@ -29,7 +24,7 @@ ServerName dev.nittany.local
                 Allow from all
         </Directory>
 
-        ErrorLog <%= node[:apache][:log_dir] %>/error.log
+        ErrorLog <%= node[:apache][:log_dir] %>/error.log 
 
         # Possible values include: debug, info, notice, warn, error, crit,
         # alert, emerg.
