@@ -9,18 +9,18 @@ This is a Vagrant profile for installing a fully functioning [Nittany distributi
 2. Install [Vagrant](http://www.vagrantup.com/downloads.html)
 3. Install [git](http://git-scm.com/downloads) (recommended)
 4. Download or Clone (`git clone https://github.com/btopro/nittany-vagrant.git`) this project
-5. Spin up the vagrant instance:
-```
-cd nittany-vagrant
-vagrant up
-```
-6. Add this line to your /etc/hosts (or [windows equivalent](http://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/)) so you can access it "over the web":
-
+5. Add this line to your /etc/hosts (or [windows equivalent](http://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/)) so you can access it "over the web":
 ```
 ###Nittany development
 
 # front facing addresses
 10.0.18.55       dev.nittany.local
+```
+
+###Spin up the vagrant instance:
+```
+cd nittany-vagrant
+vagrant up
 ```
 
 Go to http://dev.nittany.local/ after installation completes (grab a coffee, it takes awhile the first time to finish).  If it all worked you should see a new Drupal site running the Nittany distribution.
